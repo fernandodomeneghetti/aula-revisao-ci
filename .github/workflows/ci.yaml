@@ -1,9 +1,10 @@
 name: ci
 run-name: Pipeline de integração contínua e analise de Código
 on:
-    push:
+    pull_request:
         branches:
             - main
+    workflow_dispatch:
 
 jobs:
     cd:
