@@ -25,3 +25,16 @@ jobs:
                     -Dsonar.projectName=site-faculdade
                     -Dsonar.projectVersion=1.0
                     -Dsonar.sources=.
+
+            - name: Azure WebApp
+              uses: Azure/webapps-deploy@v3.0.1
+              with:
+                # Name of the Azure Web App
+                app-name: site-aula-ci-devops
+                publish-profile: ${{ secrets.PUBLISH_PROFILE }} # optional
+                # Enter an existing Slot other than the Production slot
+                # Applies to Web App only: Path to package or folder. *.zip, *.war, *.jar or a folder to deploy
+                package: . # optional, default is .
+                # Applies to Web App Containers only: Specify the fully qualified container image(s) name. For example, 'myregistry.azurecr.io/nginx:latest' or 'python:3.7.2-alpine/'. For multi-container scenario multiple container image names can be provided (multi-line separated)
+                # Applies to Web App Containers only: Path of the Docker-Compose file. Should be a fully qualified path or relative to the default working directory. Required for multi-container scenario
+                
