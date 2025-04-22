@@ -15,16 +15,16 @@ jobs:
               with:
                 fetch-depth: 0  
             
-            - uses: SonarSource/sonarqube-scan-action@v5
-              env:
-                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-              with:
-                args: >
-                    -Dsonar.projectKey=site-faculdade
-                    -Dsonar.projectName=site-faculdade
-                    -Dsonar.projectVersion=1.0
-                    -Dsonar.sources=.
+           # - uses: SonarSource/sonarqube-scan-action@v5
+           #   env:
+           #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+           #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+           #   with:
+           #     args: >
+           #         -Dsonar.projectKey=site-faculdade
+           #         -Dsonar.projectName=site-faculdade
+           #         -Dsonar.projectVersion=1.0
+           #         -Dsonar.sources=.
 
             - name: Azure WebApp
               uses: Azure/webapps-deploy@v3.0.1
